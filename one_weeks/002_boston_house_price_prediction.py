@@ -50,7 +50,9 @@ y_test = ss_y.transform(y_test.reshape(-1, 1))
 
 
 
-# 线性回归
+"""
+(1):默认OLS线性回归模型
+"""
 #class sklearn.linear_model.LinearRegression(fit_intercept=True, normalize=False, copy_X=True, n_jobs=1)
 from sklearn.linear_model import LinearRegression
 
@@ -95,6 +97,10 @@ plt.tight_layout()
 
 
 
+
+"""
+(2):针对大数据集合时,使用随机梯度下降的回归算法
+"""
 # 线性模型，随机梯度下降优化模型参数
 # 随机梯度下降一般在大数据集上应用，其实本项目不适合用
 from sklearn.linear_model import SGDRegressor
@@ -113,6 +119,11 @@ sgdr.coef_
 print 'The value of default measurement of SGDRegressor on test is', sgdr.score(X_test, y_test)
 print 'The value of default measurement of SGDRegressor on train is', sgdr.score(X_train, y_train)
 
+
+
+"""
+(3):使用L2正则
+"""
 
 #岭回归／L2正则
 #class sklearn.linear_model.RidgeCV(alphas=(0.1, 1.0, 10.0), fit_intercept=True,
@@ -157,7 +168,9 @@ fs.sort_values(by=['coef_lr'],ascending=False)
 
 
 
-
+"""
+(4):使用L1正则
+"""
 #### Lasso／L1正则
 # class sklearn.linear_model.LassoCV(eps=0.001, n_alphas=100, alphas=None, fit_intercept=True,
 #                                    normalize=False, precompute=’auto’, max_iter=1000,
@@ -198,7 +211,9 @@ fs = pd.DataFrame({"columns": list(columns), "coef_lr": list((lr.coef_.T)), "coe
 fs.sort_values(by=['coef_lr'], ascending=False)
 
 
-
+"""
+(4):L1正则:扩大超参数的搜索
+"""
 #### Lasso／L1正则
 # class sklearn.linear_model.LassoCV(eps=0.001, n_alphas=100, alphas=None, fit_intercept=True,
 #                                    normalize=False, precompute=’auto’, max_iter=1000,
