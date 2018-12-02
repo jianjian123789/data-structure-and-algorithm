@@ -248,7 +248,22 @@ plt.show()
 
 print ('alpha is:', lasso.alpha_)
 
+#正系数值最大的10个特征和负系数值最小（绝对值大）的10个特征
+imp_coefs = pd.concat([coefs.sort_values().head(10),
+                     coefs.sort_values().tail(10)])
+imp_coefs.plot(kind = "barh")
+plt.title("Coefficients in the Ridge Model")
+plt.show()
 
 
+## 对测试集进行测试，生成提交文件
+y_test_pred = lasso.predict(X_test)
+y_test_pred = y_test_pred * std_y +  mean_y
 
+#生成提交测试结果
 
+#df = pd.DataFrame({"Id":test_Id, 'SalePrice':y_test_pred})
+#df.reindex(columns=['Id'])
+y = pd.Series(data = y_test_pred, name = 'SalePrice')
+df = pd.concat([test_Id, y], axis = 1)
+df.to_csv('submission.csv')
