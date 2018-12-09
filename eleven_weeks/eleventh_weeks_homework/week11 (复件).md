@@ -43,9 +43,6 @@ Word2Vec理解：
 
 **代码**
 
-使用了本周作业https://gitee.com/ai100/quiz-w10-code 的基础代码并进行了响应填充，完整代码见：
-https://github.com/SDMrFeng/quiz-w11-rnn
-
 其中utils.py的修改内容如下：
 ```python
 def get_train_data(vocabulary, batch_size, num_steps):
