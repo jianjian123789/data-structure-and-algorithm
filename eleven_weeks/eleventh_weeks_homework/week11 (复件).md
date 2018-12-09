@@ -184,11 +184,3 @@ RNN和LSTM理解：
 4. tensorflow的static_rnn实现时，会生成整个的计算图，且对输入的维度timesteps有固定要求；dynamic_rnn实现时，不真正生成整个计算图，而是在计算单元cell外包裹一个loop，对timesteps长度无固定要求，比较符合实际自然语言情况。
 5. LSTM中增加了三个gate，分别控制要遗忘多少原来记住的信息、要记住多少当前输入的信息、要将多少信息输出到下一时刻。当然LSTM的“权重”涉及到的参数数量也增长了，变为普通rnn的4倍左右。
 
-## 随堂作业部分
-
-1. RNN的反向传播的理解和代码补充实现，做的时候稍微费了些时间，但第一次运行就输出了正确结果，理解了会在模型层次和时间层次两个方向进行反向传播，就可以比较轻松的完成： https://github.com/SDMrFeng/quiz-w11-rnn/blob/master/BPTT-Test.ipynb
-2. 随堂练习（调整参数，观察模型学习到了数字排列规则的情况）调整number_steps和state_size，根据loss变化判断模型是否学习到了01数字排列规则，学习到了一个规则还是两个规则：（用了20组左右的参数，观察得到了一些体会）
-- number_steps太小时，什么都记不住，loss会出现震荡；
-- number_steps增大的同时，也许保证epoch_nums，即保证BP次数，否则loss下降不到最低点，达不到最优效果；
-- state_size太小时，记住的规则有限，最多学到一个规则。
-
