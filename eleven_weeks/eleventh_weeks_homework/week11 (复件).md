@@ -18,7 +18,7 @@ https://www.github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/examples/tutor
 - 标点、。，）（集中在一起
 - UNK字符位置也相对独立
 
-<div align=center><img  src="https://raw.githubusercontent.com/SDMrFeng/photosets/master/csdn_quiz_week11_output_word2vec.png"/></div>
+<div align=center><img  src="https://github.com/jianjian123789/CSDN/blob/master/eleven_weeks/eleventh_weeks_homework/csdn_quiz_week11_output_word2vec.png"/></div>
 
 **心得体会**
 
