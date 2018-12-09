@@ -2,13 +2,6 @@
 参考代码：
 https://www.github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/examples/tutorials/word2vec/word2vec_basic.py
 
-实际对全宋词进行训练，生成embedding的实现代码：（主要改动在第一步数据读取时）
-https://github.com/SDMrFeng/quiz-w11-rnn/blob/master/Word2Vec.py
-
-**训练小记**
-1. 参考代码和录播课程中讲解Word2Vec使用的是同一基础的代码，在听课过程中即完成了随堂复现，所以代码部分没有太多障碍；
-2. matplotlib绘图时，对中文均以方框代替，在解决过程中遇到了一些问题，根据网上的参考方案，增加了matplotlib下的simhei字体。（本机除了tensorflow环境还有python2和python3的环境，在本次作业中使用python3，也提高了动手配置环境的能力）
-3. 按照作业要求，在代码中增加了word和index对应dictionary和reverse_dictionary的保存操作，增加了结果embedding.npy的保存操作。
 
 **训练结果**
 
